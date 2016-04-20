@@ -8,8 +8,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
-Version:        0.8.4
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 Summary:        Client library for OpenStack Murano API
 
 License:        ASL 2.0
@@ -167,5 +167,3 @@ popd
 %license LICENSE
 
 %changelog
-* Wed Apr 13 2016 Marcos Fermin Lobo <marcos.fermin.lobo@cern.ch> 0.8.4-1
-- First RPM
