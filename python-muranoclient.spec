@@ -8,7 +8,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
-Version:        0.8.4
+Version:        0.8.6
 Release:        1%{?dist}
 Summary:        Client library for OpenStack Murano API
 
@@ -167,5 +167,8 @@ popd
 %license LICENSE
 
 %changelog
+* Tue Sep 13 2016 Haikel Guemar <hguemar@fedoraproject.org> 0.8.6-1
+- Update to 0.8.6
+
 * Wed Apr 13 2016 Marcos Fermin Lobo <marcos.fermin.lobo@cern.ch> 0.8.4-1
 - First RPM
