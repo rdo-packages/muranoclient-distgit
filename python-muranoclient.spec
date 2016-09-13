@@ -29,21 +29,22 @@ BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr >= 1.6
 
-Requires:       python-babel >= 1.3
-Requires:       python-glanceclient >= 2.0.0
+Requires:       python-babel >= 2.3.4
+Requires:       python-glanceclient >= 2.3.0
 Requires:       python-httplib2 >= 0.7.5
-Requires:       python-iso8601 >= 0.1.9
-Requires:       python-keystoneclient >= 1.6.0
+Requires:       python-iso8601 >= 0.1.11
+Requires:       python-keystoneclient >= 1:2.0.0
 Requires:       python-openstackclient >= 2.1.0
 Requires:       python-pbr >= 1.6
 Requires:       python-prettytable >= 0.7
 Requires:       python-requests >= 2.8.1
 Requires:       python-six >= 1.9.0
 Requires:       python-yaql >= 1.1.0
-Requires:       python2-oslo-log >= 1.14.0
-Requires:       python2-oslo-i18n >= 2.1.0
-Requires:       python2-oslo-serialization >= 1.10.0
-Requires:       python2-oslo-utils >= 3.5.0
+Requires:       python-osc-lib >= 1.0.2
+Requires:       python-oslo-log >= 1.14.0
+Requires:       python-oslo-i18n >= 2.1.0
+Requires:       python-oslo-serialization >= 1.10.0
+Requires:       python-oslo-utils >= 3.16.0
 Requires:       pyOpenSSL >= 0.14
 Requires:       PyYAML >= 3.1.0
 
@@ -65,15 +66,16 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr >= 0.6
 BuildRequires:  python-tools
 
-Requires:       python3-babel >= 1.3
-Requires:       python3-glanceclient >= 2.0.0
+Requires:       python3-babel >= 2.3.4
+Requires:       python3-glanceclient >= 2.3.0
 Requires:       python3-httplib2 >= 0.7.5
-Requires:       python3-iso8601 >= 0.1.9
-Requires:       python3-keystoneclient >= 1.6.0
+Requires:       python3-iso8601 >= 0.1.11
+Requires:       python3-keystoneclient >= 1:2.0.0
+Requires:       python3-osc-lib >= 1.0.2
 Requires:       python3-oslo-log >= 1.14.0
 Requires:       python3-oslo-i18n >= 2.1.0
 Requires:       python3-oslo-serialization >= 1.10.0
-Requires:       python3-oslo-utils >= 3.5.0
+Requires:       python3-oslo-utils >= 3.16.0
 Requires:       python3-pbr >= 0.6
 Requires:       python3-prettytable >= 0.7
 Requires:       python3-requests >= 2.8.1
