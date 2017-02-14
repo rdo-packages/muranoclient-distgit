@@ -34,6 +34,7 @@ Requires:       python-glanceclient >= 1:2.5.0
 Requires:       python-httplib2 >= 0.7.5
 Requires:       python-iso8601 >= 0.1.11
 Requires:       python-keystoneclient >= 1:3.8.0
+Requires:       python-murano-pkg-check
 Requires:       python-openstackclient >= 2.1.0
 Requires:       python-pbr >= 1.8
 Requires:       python-prettytable >= 0.7
@@ -71,6 +72,7 @@ Requires:       python3-glanceclient >= 1:2.5.0
 Requires:       python3-httplib2 >= 0.7.5
 Requires:       python3-iso8601 >= 0.1.11
 Requires:       python3-keystoneclient >= 1:3.8.0
+Requires:       python3-murano-pkg-check
 Requires:       python3-openstackclient >= 2.1.0
 Requires:       python3-pbr >= 1.8
 Requires:       python3-prettytable >= 0.7
