@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac4a560_7b40f756",
+        "filename": "python-muranoclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-02-27T16:03:44Z",
+      "side": 1,
+      "message": "Why is this necessary, tere is Provides: pyOpenSSL\n?",
+      "revId": "3eb703a0543619c1d21f504b70125e3d4b437748",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
