@@ -16,6 +16,23 @@
       "revId": "3eb703a0543619c1d21f504b70125e3d4b437748",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac4a560_7e2545aa",
+        "filename": "python-muranoclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-02-27T18:31:52Z",
+      "side": 1,
+      "message": "This part is correct fix, pyOpenSSL is not py3\nit must be python3-pyOpenSSL or better python3dist(pyopenssl) in latest Fedora.",
+      "revId": "3eb703a0543619c1d21f504b70125e3d4b437748",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
