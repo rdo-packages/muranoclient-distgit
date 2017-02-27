@@ -84,7 +84,7 @@ Requires:       python3-oslo-log >= 3.11.0
 Requires:       python3-oslo-i18n >= 2.1.0
 Requires:       python3-oslo-serialization >= 1.10.0
 Requires:       python3-oslo-utils >= 3.18.0
-Requires:       pyOpenSSL >= 0.14
+Requires:       python3-pyOpenSSL >= 0.14
 Requires:       PyYAML >= 3.10
 
 %description -n python3-%{pypi_name}
