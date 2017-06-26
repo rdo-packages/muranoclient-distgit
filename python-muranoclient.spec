@@ -97,7 +97,7 @@ API (the muranoclient module) and a command-line tool (murano).
 Summary:        Documentation for OpenStack Murano API Client
 
 BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx >= 2.3.0
+BuildRequires: python-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
@@ -125,10 +125,10 @@ LANG=en_US.UTF-8 %{__python3} setup.py build
 popd
 %endif
 
-# generate html docs 
-sphinx-build doc/source html
+# generate html docs
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
 %if 0%{?with_python3}
@@ -168,7 +168,7 @@ popd
 %endif
 
 %files -n python-%{pypi_name}-doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 
 %changelog
