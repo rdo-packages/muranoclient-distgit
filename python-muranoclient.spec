@@ -97,7 +97,7 @@ API (the muranoclient module) and a command-line tool (murano).
 Summary:        Documentation for OpenStack Murano API Client
 
 BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx >= 2.3.0
+BuildRequires: python-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
@@ -172,3 +172,4 @@ popd
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-muranoclient/commit/?id=b2f1a59b965b8d0a2db5d0badb287401c754af71
