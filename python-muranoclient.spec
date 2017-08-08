@@ -28,25 +28,24 @@ API (the muranoclient module) and a command-line tool (murano).
 BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-BuildRequires:  python-pbr >= 1.6
+BuildRequires:  python-pbr >= 2.0.0
 
 Requires:       python-babel >= 2.3.4
-Requires:       python-glanceclient >= 1:2.5.0
+Requires:       python-glanceclient >= 1:2.8.0
 Requires:       python-httplib2 >= 0.7.5
 Requires:       python-iso8601 >= 0.1.11
 Requires:       python-keystoneclient >= 1:3.8.0
-Requires:       python-murano-pkg-check
-Requires:       python-openstackclient >= 2.1.0
-Requires:       python-pbr >= 1.8
+Requires:       python-murano-pkg-check >= 0.3.0
+Requires:       python-pbr >= 2.0.0
 Requires:       python-prettytable >= 0.7
 Requires:       python-requests >= 2.10.0
 Requires:       python-six >= 1.9.0
 Requires:       python-yaql >= 1.1.0
-Requires:       python-osc-lib >= 1.2.0
-Requires:       python-oslo-log >= 3.11.0
+Requires:       python-osc-lib >= 1.7.0
+Requires:       python-oslo-log >= 3.22.0
 Requires:       python-oslo-i18n >= 2.1.0
 Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-oslo-utils >= 3.18.0
+Requires:       python-oslo-utils >= 3.20.0
 Requires:       pyOpenSSL >= 0.14
 Requires:       PyYAML >= 3.10
 
@@ -65,26 +64,25 @@ Summary:        Support of EC2 API for OpenStack
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-pbr >= 0.6
+BuildRequires:  python3-pbr >= 2.0.0
 BuildRequires:  python-tools
 
 Requires:       python3-babel >= 2.3.4
-Requires:       python3-glanceclient >= 1:2.5.0
+Requires:       python3-glanceclient >= 1:2.8.0
 Requires:       python3-httplib2 >= 0.7.5
 Requires:       python3-iso8601 >= 0.1.11
 Requires:       python3-keystoneclient >= 1:3.8.0
-Requires:       python3-murano-pkg-check
-Requires:       python3-openstackclient >= 2.1.0
-Requires:       python3-pbr >= 1.8
+Requires:       python3-murano-pkg-check >= 0.3.0
+Requires:       python3-pbr >= 2.0.0
 Requires:       python3-prettytable >= 0.7
 Requires:       python3-requests >= 2.10.0
 Requires:       python3-six >= 1.9.0
 Requires:       python3-yaql >= 1.1.0
-Requires:       python3-osc-lib >= 1.2.0
-Requires:       python3-oslo-log >= 3.11.0
+Requires:       python3-osc-lib >= 1.7.0
+Requires:       python3-oslo-log >= 3.22.0
 Requires:       python3-oslo-i18n >= 2.1.0
 Requires:       python3-oslo-serialization >= 1.10.0
-Requires:       python3-oslo-utils >= 3.18.0
+Requires:       python3-oslo-utils >= 3.20.0
 Requires:       pyOpenSSL >= 0.14
 Requires:       PyYAML >= 3.10
 
