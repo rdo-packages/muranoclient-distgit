@@ -98,6 +98,7 @@ Summary:        Documentation for OpenStack Murano API Client
 
 BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
+BuildRequires: openstack-macros
 
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
@@ -108,7 +109,7 @@ Murano API.
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 # Let RPM handle the dependencies
-rm -f test-requirements.txt requirements.txt
+%py_req_cleanup
 
 %if 0%{?with_python3}
 rm -rf %{py3dir}
