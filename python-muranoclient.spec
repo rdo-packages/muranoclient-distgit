@@ -7,6 +7,10 @@
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global common_desc \
+Client library for Murano built on the Murano API. It provides a Python \
+API (the muranoclient module) and a command-line tool (murano).
+
 Name:           python-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -19,9 +23,7 @@ Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
 %description
-Client library for Murano built on the Murano API. It provides a Python
-API (the muranoclient module) and a command-line tool (murano).
-
+%{common_desc}
 
 %package -n     python2-%{pypi_name}
 
@@ -53,8 +55,7 @@ Summary:        Client library for OpenStack Murano API.
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 %description -n python2-%{pypi_name}
-Client library for Murano built on the Murano API. It provides a Python
-API (the muranoclient module) and a command-line tool (murano).
+%{common_desc}
 
 # Python3 package
 %if 0%{?with_python3}
@@ -88,8 +89,7 @@ Requires:       python3-pyOpenSSL >= 0.14
 Requires:       python3-PyYAML >= 3.10
 
 %description -n python3-%{pypi_name}
-Client library for Murano built on the Murano API. It provides a Python
-API (the muranoclient module) and a command-line tool (murano).
+%{common_desc}
 %endif
 
 # Documentation package
