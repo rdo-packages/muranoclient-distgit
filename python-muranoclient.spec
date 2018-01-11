@@ -22,12 +22,14 @@ Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 
+BuildRequires:  git
+BuildRequires:  openstack-macros
+
 %description
 %{common_desc}
 
 %package -n     python2-%{pypi_name}
 
-BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr >= 2.0.0
@@ -98,7 +100,6 @@ Summary:        Documentation for OpenStack Murano API Client
 
 BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
-BuildRequires: openstack-macros
 
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
