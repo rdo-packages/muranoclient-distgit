@@ -31,27 +31,30 @@ BuildRequires:  openstack-macros
 %package -n     python2-%{pypi_name}
 
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-pbr >= 2.0.0
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-pbr >= 2.0.0
 
-Requires:       python-babel >= 2.3.4
-Requires:       python-glanceclient >= 1:2.8.0
-Requires:       python-httplib2 >= 0.7.5
-Requires:       python-iso8601 >= 0.1.11
-Requires:       python-keystoneclient >= 1:3.8.0
-Requires:       python-murano-pkg-check >= 0.3.0
-Requires:       python-pbr >= 2.0.0
-Requires:       python-prettytable >= 0.7
-Requires:       python-requests >= 2.10.0
-Requires:       python-six >= 1.9.0
-Requires:       python-yaql >= 1.1.0
-Requires:       python-osc-lib >= 1.7.0
-Requires:       python-oslo-log >= 3.22.0
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-oslo-utils >= 3.20.0
-Requires:       pyOpenSSL >= 0.14
+Requires:       python2-babel >= 2.3.4
+Requires:       python2-glanceclient >= 1:2.8.0
+Requires:       python2-iso8601 >= 0.1.11
+Requires:       python2-keystoneclient >= 1:3.8.0
+Requires:       python2-murano-pkg-check >= 0.3.0
+Requires:       python2-pbr >= 2.0.0
+Requires:       python2-prettytable >= 0.7.1
+Requires:       python2-requests >= 2.14.2
+Requires:       python2-six >= 1.10.0
+Requires:       python2-yaql >= 1.1.3
+Requires:       python2-osc-lib >= 1.8.0
+Requires:       python2-oslo-log >= 3.36.0
+Requires:       python2-oslo-i18n >= 3.15.3
+Requires:       python2-oslo-serialization >= 2.18.0
+Requires:       python2-oslo-utils >= 3.33.0
+Requires:       python2-pyOpenSSL >= 16.2.0
+%if 0%{?fedora} > 0
+Requires:       python2-pyyaml >= 3.10
+%else
 Requires:       PyYAML >= 3.10
+%endif
 
 Summary:        Client library for OpenStack Murano API.
 %{?python_provide:%python_provide python2-%{pypi_name}}
@@ -72,22 +75,21 @@ BuildRequires:  python-tools
 
 Requires:       python3-babel >= 2.3.4
 Requires:       python3-glanceclient >= 1:2.8.0
-Requires:       python3-httplib2 >= 0.7.5
 Requires:       python3-iso8601 >= 0.1.11
 Requires:       python3-keystoneclient >= 1:3.8.0
 Requires:       python3-murano-pkg-check >= 0.3.0
 Requires:       python3-pbr >= 2.0.0
-Requires:       python3-prettytable >= 0.7
-Requires:       python3-requests >= 2.10.0
-Requires:       python3-six >= 1.9.0
-Requires:       python3-yaql >= 1.1.0
-Requires:       python3-osc-lib >= 1.7.0
-Requires:       python3-oslo-log >= 3.22.0
-Requires:       python3-oslo-i18n >= 2.1.0
-Requires:       python3-oslo-serialization >= 1.10.0
-Requires:       python3-oslo-utils >= 3.20.0
-Requires:       python3-oslo-utils >= 3.18.0
-Requires:       python3-pyOpenSSL >= 0.14
+Requires:       python3-prettytable >= 0.7.1
+Requires:       python3-requests >= 2.14.2
+Requires:       python3-six >= 1.10.0
+Requires:       python3-yaql >= 1.1.3
+Requires:       python3-osc-lib >= 1.8.0
+Requires:       python3-oslo-log >= 3.36.0
+Requires:       python3-oslo-i18n >= 3.15.3
+Requires:       python3-oslo-serialization >= 2.18.0
+Requires:       python3-oslo-utils >= 3.33.0
+Requires:       python3-oslo-utils >= 3.33.0
+Requires:       python3-pyOpenSSL >= 16.2.0
 Requires:       python3-PyYAML >= 3.10
 
 %description -n python3-%{pypi_name}
@@ -98,8 +100,8 @@ Requires:       python3-PyYAML >= 3.10
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Murano API Client
 
-BuildRequires: python-sphinx
-BuildRequires: python-openstackdocstheme
+BuildRequires: python2-sphinx
+BuildRequires: python2-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
