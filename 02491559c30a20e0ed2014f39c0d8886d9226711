@@ -45,6 +45,30 @@
       "revId": "02491559c30a20e0ed2014f39c0d8886d9226711",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_9cd874f1",
+        "filename": "python-muranoclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-07T11:29:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_3c2ba8ed",
+      "range": {
+        "startLine": 46,
+        "startChar": 32,
+        "endLine": 46,
+        "endChar": 37
+      },
+      "revId": "02491559c30a20e0ed2014f39c0d8886d9226711",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
