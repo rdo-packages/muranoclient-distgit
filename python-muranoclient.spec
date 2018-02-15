@@ -12,8 +12,8 @@ Client library for Murano built on the Murano API. It provides a Python \
 API (the muranoclient module) and a command-line tool (murano).
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        1.0.1
+Release:        1%{?dist}
 Summary:        Client library for OpenStack Murano API
 
 License:        ASL 2.0
@@ -176,3 +176,6 @@ popd
 %license LICENSE
 
 %changelog
+* Thu Feb 15 2018 Haikel Guemar <hguemar@fedoraproject.org> 1.0.1-1
+- Update to 1.0.1
+
