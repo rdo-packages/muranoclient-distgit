@@ -176,3 +176,4 @@ popd
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-muranoclient/commit/?id=c742bfa73b249b3901e9d1308b211caabda15f75
