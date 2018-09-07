@@ -1,9 +1,10 @@
 %global pypi_name muranoclient
 
 %if 0%{?fedora}
-%global with_python3 0
+%global with_python3 1
 %{!?python3_shortver: %global python3_shortver %(%{__python3} -c 'import sys; print(str(sys.version_info.major) + "." + str(sys.version_info.minor))')}
 %endif
+%{!?python2_shortver: %global python2_shortver %(%{__python2} -c 'import sys; print(str(sys.version_info.major) + "." + str(sys.version_info.minor))')}
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -141,25 +142,31 @@ pushd %{py3dir}
 LANG=en_US.UTF-8 %{__python3} setup.py install --skip-build --root %{buildroot}
 mv %{buildroot}%{_bindir}/murano %{buildroot}%{_bindir}/python3-murano
 popd
+# rename binaries, make compat symlinks
+pushd %{buildroot}%{_bindir}
+for i in murano-{3,%{?python3_shortver}}; do
+    ln -s  python3-murano $i
+done
+popd
 %endif
 
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 # rename binaries, make compat symlinks
 pushd %{buildroot}%{_bindir}
-%if 0%{?with_python3}
-for i in %{pypi_name}-{3,%{?python3_shortver}}; do
-    ln -s  python3-%{pypi_name} $i
+for i in murano-{2,%{?python2_shortver}}; do
+    ln -s  murano $i
 done
-%endif
 popd
+
 
 %files -n python2-%{pypi_name}
 %license LICENSE
 %doc README.rst
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/python_%{pypi_name}-*-py?.?.egg-info
-%{_bindir}/murano*
+%{_bindir}/murano
+%{_bindir}/murano-2*
 
 # Files for python3
 %if 0%{?with_python3}
@@ -167,9 +174,9 @@ popd
 %license LICENSE
 %doc README.rst
 %{_bindir}/python3-murano
-%{_bindir}/murano*
+%{_bindir}/murano-3*
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/python_%{pypi_name}-%{version}-py?.?.egg-info
+%{python3_sitelib}/python_%{pypi_name}-*-py?.?.egg-info
 %endif
 
 %files -n python-%{pypi_name}-doc
