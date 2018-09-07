@@ -1,7 +1,7 @@
 %global pypi_name muranoclient
 
 %if 0%{?fedora}
-%global with_python3 0
+%global with_python3 1
 %{!?python3_shortver: %global python3_shortver %(%{__python3} -c 'import sys; print(str(sys.version_info.major) + "." + str(sys.version_info.minor))')}
 %endif
 
@@ -169,7 +169,7 @@ popd
 %{_bindir}/python3-murano
 %{_bindir}/murano*
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/python_%{pypi_name}-%{version}-py?.?.egg-info
+%{python3_sitelib}/python_%{pypi_name}-*-py?.?.egg-info
 %endif
 
 %files -n python-%{pypi_name}-doc
