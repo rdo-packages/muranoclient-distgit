@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_68c5c18c",
+        "filename": "python-muranoclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-09-07T10:29:09Z",
+      "side": 1,
+      "message": "I\u0027ve checked the generated package, and the binaries do not work. We have a murano binary which points to the python2 version, and then a muranoclient-3 and muranoclient-3.6 symlink to a non-existent python3-muranoclient binary.\n\nCould you fix that?",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 4
+      },
+      "revId": "79075072230240a2a0f08d1da0375b0525266bf5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
