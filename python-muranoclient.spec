@@ -10,6 +10,8 @@
 %global pyver_build %py%{pyver}_build
 # End of macros for py2/py3 compatibility
 
+%global with_doc 1
+
 %global pypi_name muranoclient
 %global cname murano
 
@@ -73,6 +75,7 @@ Requires:       python%{pyver}-PyYAML >= 3.10
 %description -n python%{pyver}-%{pypi_name}
 %{common_desc}
 
+%if 0%{?with_doc}
 # Documentation package
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Murano API Client
@@ -83,6 +86,7 @@ BuildRequires: python%{pyver}-openstackdocstheme
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
 Murano API.
+%endif
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -94,11 +98,13 @@ rm -rf %{pypi_name}.egg-info
 %build
 %{pyver_build}
 
+%if 0%{?with_doc}
 # generate html docs
 export PYTHONPATH=.
 sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 %install
 %{pyver_install}
@@ -114,8 +120,10 @@ ln -s %{cname} %{buildroot}%{_bindir}/%{cname}-%{pyver}
 %{_bindir}/murano
 %{_bindir}/murano-%{pyver}
 
+%if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
