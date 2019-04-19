@@ -8,7 +8,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
-Version:        0.14.0
+Version:        0.14.1
 Release:        1%{?dist}
 Summary:        Client library for OpenStack Murano API
 
@@ -172,6 +172,9 @@ popd
 %license LICENSE
 
 %changelog
+* Fri Apr 19 2019 RDO <dev@lists.rdoproject.org> 0.14.1-1
+- Update to 0.14.1
+
 * Mon Aug 14 2017 Alfredo Moralejo <amoralej@redhat.com> 0.14.0-1
 - Update to 0.14.0
 
