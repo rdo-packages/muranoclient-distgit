@@ -22,8 +22,8 @@ Client library for Murano built on the Murano API. It provides a Python \
 API (the muranoclient module) and a command-line tool (murano).
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        1.3.0
+Release:        1%{?dist}
 Summary:        Client library for OpenStack Murano API
 
 License:        ASL 2.0
@@ -127,3 +127,6 @@ ln -s %{cname} %{buildroot}%{_bindir}/%{cname}-%{pyver}
 %endif
 
 %changelog
+* Fri Sep 20 2019 RDO <dev@lists.rdoproject.org> 1.3.0-1
+- Update to 1.3.0
+
