@@ -41,9 +41,7 @@ BuildRequires:  openstack-macros
 %package -n     python%{pyver}-%{pypi_name}
 Summary:        Client library for OpenStack Murano API.
 %{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
-%if %{pyver} == 3
 Obsoletes: python2-%{pypi_name} < %{version}-%{release}
-%endif
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-setuptools
@@ -64,13 +62,8 @@ Requires:       python%{pyver}-oslo-log >= 3.36.0
 Requires:       python%{pyver}-oslo-i18n >= 3.15.3
 Requires:       python%{pyver}-oslo-serialization >= 2.18.0
 Requires:       python%{pyver}-oslo-utils >= 3.33.0
-Requires:       python%{pyver}-pyOpenSSL >= 16.2.0
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:       PyYAML >= 3.10
-%else
+Requires:       python%{pyver}-pyOpenSSL >= 17.1.0
 Requires:       python%{pyver}-PyYAML >= 3.10
-%endif
 
 %description -n python%{pyver}-%{pypi_name}
 %{common_desc}
