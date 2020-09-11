@@ -35,7 +35,6 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-pbr >= 2.0.0
 
-Requires:       python3-babel >= 2.3.4
 Requires:       python3-glanceclient >= 1:2.8.0
 Requires:       python3-iso8601 >= 0.1.11
 Requires:       python3-keystoneclient >= 1:3.8.0
