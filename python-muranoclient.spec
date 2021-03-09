@@ -54,15 +54,14 @@ Requires:       python3-murano-pkg-check >= 0.3.0
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-prettytable >= 0.7.2
 Requires:       python3-requests >= 2.14.2
-Requires:       python3-six >= 1.10.0
 Requires:       python3-yaql >= 1.1.3
-Requires:       python3-osc-lib >= 1.10.0
+Requires:       python3-osc-lib >= 1.8.0
 Requires:       python3-oslo-log >= 3.36.0
 Requires:       python3-oslo-i18n >= 3.15.3
 Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-pyOpenSSL >= 17.1.0
-Requires:       python3-PyYAML >= 3.10
+Requires:       python3-yaml >= 3.13
 
 %description -n python3-%{pypi_name}
 %{common_desc}
