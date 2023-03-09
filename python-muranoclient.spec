@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xa7475c5f2122fec3f90343223fe3bf5aad1080e4
 %global with_doc 1
 
 %global pypi_name muranoclient
@@ -12,8 +12,8 @@ Client library for Murano built on the Murano API. It provides a Python \
 API (the muranoclient module) and a command-line tool (murano).
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        2.6.0
+Release:        1%{?dist}
 Summary:        Client library for OpenStack Murano API
 
 License:        ASL 2.0
@@ -122,3 +122,6 @@ ln -s %{cname} %{buildroot}%{_bindir}/%{cname}-3
 %endif
 
 %changelog
+* Thu Mar 09 2023 RDO <dev@lists.rdoproject.org> 2.6.0-1
+- Update to 2.6.0
+
