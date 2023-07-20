@@ -6,6 +6,12 @@
 %global cname murano
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 
 %global common_desc \
 Client library for Murano built on the Murano API. It provides a Python \
@@ -16,7 +22,7 @@ Version:        XXX
 Release:        XXX
 Summary:        Client library for OpenStack Murano API
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            http://pypi.python.org/pypi/%{name}
 Source0:        https://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 # Required for tarball sources verification
@@ -40,28 +46,9 @@ BuildRequires:  openstack-macros
 
 %package -n     python3-%{pypi_name}
 Summary:        Client library for OpenStack Murano API.
-%{?python_provide:%python_provide python3-%{pypi_name}}
-Obsoletes: python2-%{pypi_name} < %{version}-%{release}
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-pbr >= 2.0.0
-
-Requires:       python3-glanceclient >= 1:2.8.0
-Requires:       python3-iso8601 >= 0.1.11
-Requires:       python3-keystoneclient >= 1:3.8.0
-Requires:       python3-murano-pkg-check >= 0.3.0
-Requires:       python3-pbr >= 2.0.0
-Requires:       python3-prettytable >= 0.7.2
-Requires:       python3-requests >= 2.14.2
-Requires:       python3-yaql >= 1.1.3
-Requires:       python3-osc-lib >= 1.8.0
-Requires:       python3-oslo-log >= 3.36.0
-Requires:       python3-oslo-i18n >= 3.15.3
-Requires:       python3-oslo-serialization >= 2.18.0
-Requires:       python3-oslo-utils >= 3.33.0
-Requires:       python3-pyOpenSSL >= 17.1.0
-Requires:       python3-yaml >= 3.13
+BuildRequires:  pyproject-rpm-macros
 
 %description -n python3-%{pypi_name}
 %{common_desc}
@@ -70,9 +57,6 @@ Requires:       python3-yaml >= 3.13
 # Documentation package
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for OpenStack Murano API Client
-
-BuildRequires: python3-sphinx
-BuildRequires: python3-openstackdocstheme
 
 %description -n python-%{pypi_name}-doc
 Documentation for the client library for interacting with Openstack
@@ -85,24 +69,41 @@ Murano API.
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
 %autosetup -n %{name}-%{upstream_version} -S git
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
-# Let RPM handle the dependencies
-%py_req_cleanup
+
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
 
 %build
-%{py3_build}
+%pyproject_wheel
 
 %if 0%{?with_doc}
 # generate html docs
-export PYTHONPATH=.
-sphinx-build -W -b html doc/source doc/build/html
+%tox -e docs
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{py3_install}
+%pyproject_install
 
 # Create a versioned binary for backwards compatibility until everything is pure py3
 ln -s %{cname} %{buildroot}%{_bindir}/%{cname}-3
@@ -111,7 +112,7 @@ ln -s %{cname} %{buildroot}%{_bindir}/%{cname}-3
 %license LICENSE
 %doc README.rst
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/python_%{pypi_name}-*-py%{python3_version}.egg-info
+%{python3_sitelib}/python_%{pypi_name}-*.dist-info
 %{_bindir}/murano
 %{_bindir}/murano-3
 
