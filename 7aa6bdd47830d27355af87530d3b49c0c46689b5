@@ -1,0 +1,9 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Code-Review+2: Karolina Kula <kkula@redhat.com>
+Workflow+1: Karolina Kula <kkula@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 25 Jul 2023 08:08:57 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/muranoclient-distgit/+/49345
+Project: openstack/muranoclient-distgit
+Branch: refs/heads/rpm-master
